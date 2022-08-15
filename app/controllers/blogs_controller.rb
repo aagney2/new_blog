@@ -1,8 +1,21 @@
 class BlogsController < ApplicationController
+  # Controller Filters ->
+  # Filters are methods that are run "before", "after" or "around" a controller action.
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   after_action :print
+
+  # adding a custom method.
+  # Serialzer
+  # Specs
+  def list_all_blogs_comments
+  end
+
   def index
     @blogs = Blog.all
+    # render json: {
+    #   blogs: {}
+    # }
+    # Serialzer
   end
 
   def new
