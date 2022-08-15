@@ -1,0 +1,13 @@
+<h1>Showing selected blog</h1>
+<p>
+ Title: <%= @blog.title %>
+</p>
+<p>
+ Description: <%= @blog.description %>
+</p>
+<p>
+Author: <%= @blog.author_name %>
+</p>
+Comments: <% @comments.each do |comment| %>
+<%= comment.description %>
+<%end%>

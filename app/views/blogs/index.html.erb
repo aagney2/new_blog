@@ -1,0 +1,21 @@
+<h1>Listing all Blog</h1>
+<p>
+<%= link_to "Create new Blog", new_blog_path %>
+</p>
+<table>
+ <tr>
+  <th>Title</th>
+  <th>Description</th>
+  <th>Author Name</th>
+ </tr>
+ <% @blogs.each do |blog| %>
+ <tr>
+  <td><%= blog.title %></td>
+  <td><%= blog.description %></td>
+  <td><%= blog.author_name %></td>
+  <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+  <td><%= link_to 'Show', blog_path(blog) %></td>
+  <td><%= link_to 'Delete', blog_path(blog), method: :delete %></td>
+ </tr>
+ <% end %>
+</table>

@@ -3,22 +3,16 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+This application will be able to add, modify, delete posts or blogs
+It can also have comments
+It can be liked or disliked
 
-* Ruby version
+Table name: Blog
+Column name: ID, Author, Title, Description, created at, updated at
+              1    nithin,  rails, Rails course, 5th aug,   5th Aug
+              2    Aagney   ruby,  ruby course,   6th aug,   6th Aug
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Table Nsme: Comments
+Column name: ID, Commentor, Description, created at, updated at, Blog_id
+              1,  Aagney,     Good one,   5th Aug,    5th Aug,    1   
+              2,  Aagney,     Good one,   5th Aug,    5th Aug,    1

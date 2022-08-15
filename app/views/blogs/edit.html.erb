@@ -1,0 +1,11 @@
+<% if @blog.errors.any? %>
+ <h2>The following errors prevented the article from saving:</h2>
+ <ul>
+ <% @blog.errors.full_messages.each do |msg|%>
+ <li><%= msg %></li>
+ <% end %>
+ </ul>
+<% end %>
+
+<h1>Update an Article</h1>
+<%= render 'form' %>
