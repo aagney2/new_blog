@@ -47,3 +47,16 @@ Browser
 Callbacks
 ---------
 https://guides.rubyonrails.org/active_record_callbacks.html
+
+
+Rails basics
+-------------
+https://guides.rubyonrails.org/getting_started.html
+
+
+SQL
+---
+
+https://www.w3schools.com/sql/default.asp
+https://www.tutorialspoint.com/sql/index.htm
+https://www.w3schools.com/sql/exercise.asp
