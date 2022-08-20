@@ -12,9 +12,9 @@ class BlogsController < ApplicationController
 
   def index
     @blogs = Blog.all
-    # render json: {
-    #   blogs: {}
-    # }
+    render json: {
+      blogs: {}
+    }
     # Serialzer
   end
 
@@ -51,6 +51,10 @@ class BlogsController < ApplicationController
   def destroy
     @blog.destroy
     redirect_to blogs_path
+  end
+
+  def user_stats
+    @stats_hash = Blog.group(:author_name).count
   end
 
   private
