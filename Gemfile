@@ -57,3 +57,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Postgres Database
 gem 'pg'
+
+# JSON Serialzer
+gem 'active_model_serializers', '~> 0.10.0'

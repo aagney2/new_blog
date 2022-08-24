@@ -12,9 +12,6 @@ class BlogsController < ApplicationController
 
   def index
     @blogs = Blog.all
-    render json: {
-      blogs: {}
-    }
     # Serialzer
   end
 
@@ -34,6 +31,7 @@ class BlogsController < ApplicationController
 
   def show
     @comments = @blog.comments
+    # render json: {data: ActiveModelSerializers::SerializableResource.new(@blog, serializer:BlogSerializer)}
   end
 
   def edit

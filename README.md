@@ -60,3 +60,20 @@ SQL
 https://www.w3schools.com/sql/default.asp
 https://www.tutorialspoint.com/sql/index.htm
 https://www.w3schools.com/sql/exercise.asp
+
+blog{
+  {
+    author_name: Aagney,
+    title: First blog,
+    description: This is my first blog,
+    ID: 1
+  }
+comments{
+  [{
+    description: Nice
+  },
+  {
+    description: good
+    }]
+}
+}
