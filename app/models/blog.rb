@@ -1,5 +1,5 @@
 class Blog < ApplicationRecord
-
+  paginates_per 10
   has_many :comments, dependent: :destroy # assocations
   validates :title, :author_name, :description, presence: true # validations
 

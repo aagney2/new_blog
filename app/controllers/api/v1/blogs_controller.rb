@@ -1,26 +1,27 @@
 module Api
   module V1
-    class BlogsController < ApplicationController
+    class BlogsController < Api::ApiController
       before_action :set_blog, only: [:show, :update, :destroy]
       after_action :print
+      skip_before_action :verify_authenticity_token
 
       # adding a custom method.
       # Serialzer
       # Specs
 
       def index
-        @blogs = Blog.all
-        render json: {data: ActiveModelSerializers::SerializableResource.new(@blogs, each_serializer: ::V1::BlogSerializer, comments: false)}
+        @blogs = Blog.order(id: :asc).page(params[:page] || 1)
+        render json: {data: ActiveModelSerializers::SerializableResource.new(@blogs, each_serializer: ::V1::BlogSerializer, comments: false),
+           meta: pagination(@blogs)}
         # Serialzer
       end
 
       def create
         @blog = Blog.new(blog_params)
         if @blog.save
-          flash[:notice] = "Article was successfully created"
-          redirect_to blogs_path
+          render json: {}, status: :created
         else
-          render 'new'
+          render json: {errors: @blog.errors.full_messages}, status: :unprocessable_entity
         end
       end
 
@@ -31,16 +32,15 @@ module Api
 
       def update
         if @blog.update(blog_params)
-          flash[:notice] = "Article was successfully updated"
-          redirect_to blog_path(params[:id])
+          render json: {}, status: :ok
         else
-          render 'edit'
+          render json: {errors: @blog.errors.full_messages}, status: :unprocessable_entity
         end
       end
 
       def destroy
         @blog.destroy
-        redirect_to blogs_path
+        render json: {}, status: :ok
       end
 
       private
