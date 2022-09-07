@@ -10,8 +10,8 @@ module Api
       # Specs
 
       def index
-        @blogs = Blog.order(id: :asc).page(params[:page] || 1)
-        render json: {data: ActiveModelSerializers::SerializableResource.new(@blogs, each_serializer: ::V1::BlogSerializer, comments: false),
+        @blogs = Blog.order(id: :asc).page(params[:page] || 1).includes(:comments)
+        render json: {data: ActiveModelSerializers::SerializableResource.new(@blogs, each_serializer: ::V1::BlogSerializer, comments: true),
            meta: pagination(@blogs)}
         # Serialzer
       end
