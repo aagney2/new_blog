@@ -1,6 +1,6 @@
 module V1
   class BlogSerializer < ActiveModel::Serializer
-    attributes :id, :author_name, :title, :comments
+    attributes :id, :author_name, :title, :comments, :description
     # if instance_options[:comments] == true
     #   has_many :comments
     # end

@@ -5,10 +5,7 @@ module Api
       after_action :print
       skip_before_action :verify_authenticity_token
 
-      # adding a custom method.
-      # Serialzer
-      # Specs
-
+      # /api/v1/blogs
       def index
         @blogs = Blog.order(id: :asc).page(params[:page] || 1).includes(:comments)
         render json: {data: ActiveModelSerializers::SerializableResource.new(@blogs, each_serializer: ::V1::BlogSerializer, comments: true),
