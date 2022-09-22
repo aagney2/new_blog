@@ -56,6 +56,10 @@ group :test do
   gem "minitest-rails", "~> 6.1.0"
   # Database Cleaner strategy
   gem 'database_cleaner'
+  # Factory Bot
+  gem 'factory_bot'
+  # Faker - Library to generate fake data
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -69,3 +73,6 @@ gem 'active_model_serializers', '~> 0.10.0'
 
 # Pagination
 gem 'kaminari'
+
+# Cron Scheduler
+gem 'whenever', require: false
