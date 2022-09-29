@@ -76,3 +76,6 @@ gem 'kaminari'
 
 # Cron Scheduler
 gem 'whenever', require: false
+
+# Background Jobs
+gem 'sidekiq'

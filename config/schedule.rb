@@ -7,7 +7,7 @@
 #
 set :output, "/Users/aagneysingh/Desktop/practice/blog_new/log/cron.log"
 env :PATH, ENV["PATH"]
-job_type :runner, "rbenv rehash && rbenv local 2.7.5 && cd :path && bin/spring stop && bin/rails runner -e :environment ':task' :output"
+job_type :runner, "cd :path && source ~/.zshrc && bin/rails runner -e :environment ':task' :output"
 #
 # every 2.hours do
 #   command "/usr/bin/some_great_command"
